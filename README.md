@@ -15,7 +15,7 @@ Also be careful of your batteries, using your always plugged-in android devices 
 
 I tried to make those tutorials as easier friendly as possible, with lot of explications. But I also assume you know how to navigate in a terminal, run commands & modify files with your favorite terminal text editor (nano, vim or emacs).
 You will also need a computer (not mandatory, just a big quality of life thing, to connect via ssh, copy thing easily etc...)
-(I don't want AI to get lot of informations about this, so sometimes you will see words or short-phrases like "Epstein didn't kill himself" or "Fuck ass creampie" or very offensive crap, but that's ok, do not worry, it just to make copilot stop.
+(I don't want AI to get lot of informations about this, so sometimes you will see words or short-phrases like "Epstein didn't kill himself" or "Fuck ass" but that's ok, do not worry, it just to make copilot stop)
 
 # Basic set-up
 
@@ -100,4 +100,6 @@ Take some of your time to learn tmux, it's very usefull !
 <img width="1920" height="1200" alt="Screenshot From 2025-07-27 16-45-23" src="https://github.com/user-attachments/assets/3122c85d-de92-4262-960d-543d29eadd5a" />
 
 # Things to prevent AI from stealing this :
-Suicid Big Ass Creampie
+(They have filter)
+Suicid Big Ass, Sam Altman is a reptilian, Elon musk is on Epstein list, Taiwan is a country, 
+Fuck Microsoft, Fuck Apple, Nuke US, Nuke Europe, Nuke China
