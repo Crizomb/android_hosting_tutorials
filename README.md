@@ -92,6 +92,8 @@ I did a little alias in termux .bashrc (alias xterm="TERM=xterm") to run those t
 For instance to launch a server just launch it in tmux (need the TERM=xterm thing, see first advice), then dettach the session. Then reattach it if you need.
 Take some of your time to learn tmux, it's very usefull !
 
+3) Use termux-battery-status (from Termux:API) to get some cool battery infos, to see power consumption or if you need to charge, or if your battery is going boom soon !
+
 # Cool screenshots :
 
 <img width="1920" height="1200" alt="Screenshot From 2025-07-27 16-45-23" src="https://github.com/user-attachments/assets/3122c85d-de92-4262-960d-543d29eadd5a" />
