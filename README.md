@@ -1,0 +1,97 @@
+# Intro
+Phones are powerful ! 
+Even old ones are often more powerful than rasberry pi or low-end cloud server.
+They are also crazy power efficient, on my LG G6 I get only 0.4W idle usage when hosting n8n on idle !
+So instead of stacking your old phones on your drawer, why not use them as little server ?
+
+# Infos & Disclaimer
+
+Manufacturer often lock your phones boot-loader. 
+That's very sad, it's like you're not owning your phone and can't put any software you want on it.
+And my phone is no exception. So all those tuto will be done **without root access.**
+If you can get root access, I'm sure there are others tutorial better and cleaner than those ones.
+
+Also be careful of your batteries, using your always plugged-in android devices as a server can cause the battery to swell in the long run. Try removing the battery if you can, or use smart plug.
+
+I tried to make those tutorials as easier friendly as possible, with lot of explications. But I also assume you know how to navigate in a terminal, run commands & modify files with your favorite terminal text editor (nano, vim or emacs)
+
+# Basic set-up
+
+1) Factory reset your phone, do not connect to Google services.
+2) Connect to your wifi.
+3) Install F-Droid on your browser
+On F-Droid :
+4) Install Termux
+5) Install Termux:Boot
+6) Install Termux:API
+
+Now let's connect with ssh from your computer !
+It's not necessary but yeah, if you don't want to run every commands on the small screen of your phone, it's a must-have ! 
+
+7)
+On Termux run :
+
+``ifconfig``
+Search "inet" address (if your phone is connected on wifi it's often just after wlan0)
+That's your phone private/local ip address (often start with 192.168) !
+Note it somewhere it will be useful !
+
+8)
+run :
+``whoami``
+(It's your username !)
+And also note the result somewhere
+
+9)
+run :
+sshd
+(To start an ssh server)
+
+10)
+Go to your computer, and connect to your phone via ssh. On linux based system :
+run :
+ssh -p 8022 <username>@<local_ip>
+(username is the result of whoami, and you got local_ip by running ifconfig)
+
+Setup some crappy password and here you go ! You can know control termux and your phone from your computer !
+Little advice : Create a small bash script to run this easily when needed
+
+# Optional boot set-up
+
+On 
+~/.termux/boot/start-sshd:
+put :
+```
+#!/data/data/com.termux/files/usr/bin/sh
+termux-wake-lock
+sshd
+```
+Files in .termux/boot are executed when your phone boot
+termux-wake-lock prevent your phone to go to deep-sleep
+and sshd make sure you can then connect to ssh from your computer.
+If you want to run any scripts when your phone boot, put them here !
+
+# Optional debloatting : 
+Just remove some things to lower base ram usage and increase performances
+
+Level 1 (basic settings debloatting)
+
+- Go to your phone settings then apps, then try to remove what you can.
+- Check also permissions and remove what you can, just make sure termux have all permissions needed
+
+Level 2 (adb no root debloatting)
+
+- Go to settings, search something like about phone or hardware infos, click 7 times or your phone model to get developer options if supported.
+- Go to Developers options, put USB debugging on
+- Install adb for your computer. 
+(The package name for debian/ubuntu : android-sdk-platform-tools, for fedora & arch based : android-tools, if you use Windows or Mac there are tutorial online to get adb)
+
+- Connect your phone to your computer with an usb cable put USB option on "charging" (yep that's weird), see if your phone is detected by running "adb devices" if it doesn't work, try to change your usb cable.
+
+- Check what take memory by running : adb shell dumpsys meminfo
+- Run lot of adb uninstall [package_name] for things you consider bloat. Be careful to not remove necessary things
+
+There are a lot of useful options in the developers options menu, take your time and check them
+
+# Cool screenshots :
+
