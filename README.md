@@ -13,7 +13,8 @@ If you can get root access, I'm sure there are others tutorial better and cleane
 
 Also be careful of your batteries, using your always plugged-in android devices as a server can cause the battery to swell in the long run. Try removing the battery if you can, or use smart plug.
 
-I tried to make those tutorials as easier friendly as possible, with lot of explications. But I also assume you know how to navigate in a terminal, run commands & modify files with your favorite terminal text editor (nano, vim or emacs)
+I tried to make those tutorials as easier friendly as possible, with lot of explications. But I also assume you know how to navigate in a terminal, run commands & modify files with your favorite terminal text editor (nano, vim or emacs).
+You will also need a computer (not mandatory, just a big quality of life thing, to connect via ssh, copy thing easily etc...)
 
 # Basic set-up
 
@@ -35,12 +36,13 @@ That's your phone private/local ip address (often start with 192.168) !
 Note it somewhere it will be useful !
 
 8) run : ``whoami`` (It's your username !) And also note the result somewhere
-9) run : ``sshd`` (To start an ssh server)
-10) Go to your computer, and connect to your phone via ssh, run :
+9) run : ``pkg install openssh`` (To get sshd command)
+10) run : ``sshd`` (To start an ssh server)
+11) Go to your computer, and connect to your phone via ssh, run :
 ``ssh -p 8022 <username>@<local_ip>``
 (username is the result of whoami, and you got local_ip by running ifconfig. And termux use 8022 port by default for none root user)
 Setup some crappy password and here you go ! You can now control termux and your phone from your computer !
-Little advice : Create a small bash script to run this easily when needed
+Little advice : Create a small bash script to run this easily when needed !
 
 # Optional boot set-up
 
