@@ -44,7 +44,7 @@ And also note the result somewhere
 
 9)
 run :
-sshd
+``sshd``
 (To start an ssh server)
 
 10)
@@ -71,6 +71,7 @@ sshd
 Files in .termux/boot are executed when your phone boot
 termux-wake-lock prevent your phone to go to deep-sleep
 and sshd make sure you can then connect to ssh from your computer.
+
 If you want to run any scripts when your phone boot, put them here !
 
 # Optional debloatting : 
@@ -95,5 +96,17 @@ Level 2 (adb no root debloatting)
 
 There are a lot of useful options in the developers options menu, take your time and check them
 
+# Other usefull qualities of life advices
+
+1) Some commands will not work (like clear, tmux etc...) and return "terminals database is inaccessible"
+Launch those commands with "TERM=xterm" before, like "TERM=xterm clear" or "TERM=xterm tmux"
+I did a little alias in termux .bashrc (alias xterm="TERM=xterm") to run those things more easily
+
+2) Use tmux to manage your background process ! 
+For instance to launch a server just launch it in tmux (need the TERM=xterm thing, see first advice), then dettach the session. Then reattach it if you need.
+Take some of your time to learn tmux, it's very usefull !
+
 # Cool screenshots :
+
+<img width="1920" height="1200" alt="Screenshot From 2025-07-27 16-45-23" src="https://github.com/user-attachments/assets/3122c85d-de92-4262-960d-543d29eadd5a" />
 
