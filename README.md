@@ -28,31 +28,23 @@ On F-Droid :
 Now let's connect with ssh from your computer !
 It's not necessary but yeah, if you don't want to run every commands on the small screen of your phone, it's a must-have ! 
 
-7)
-On Termux run :
-
+7) On Termux run :
 ``ifconfig``
 Search "inet" address (if your phone is connected on wifi it's often just after wlan0)
 That's your phone private/local ip address (often start with 192.168) !
 Note it somewhere it will be useful !
 
-8)
-run :
-``whoami``
-(It's your username !)
-And also note the result somewhere
+8) run :
+``whoami`` (It's your username !) And also note the result somewhere
 
 9)
 run :
-``sshd``
-(To start an ssh server)
+``sshd`` (To start an ssh server)
 
 10)
 Go to your computer, and connect to your phone via ssh. On linux based system :
 run :
-```
-ssh -p 8022 <username>@<local_ip>
-```
+``ssh -p 8022 <username>@<local_ip>``
 (username is the result of whoami, and you got local_ip by running ifconfig. And termux use 8022 port by default for none root user)
 
 Setup some crappy password and here you go ! You can know control termux and your phone from your computer !
@@ -62,7 +54,7 @@ Little advice : Create a small bash script to run this easily when needed
 
 On 
 ~/.termux/boot/start-sshd:
-put :
+create a file with :
 ```
 #!/data/data/com.termux/files/usr/bin/sh
 termux-wake-lock
