@@ -50,8 +50,10 @@ sshd
 10)
 Go to your computer, and connect to your phone via ssh. On linux based system :
 run :
+```
 ssh -p 8022 <username>@<local_ip>
-(username is the result of whoami, and you got local_ip by running ifconfig)
+```
+(username is the result of whoami, and you got local_ip by running ifconfig. And termux use 8022 port by default for none root user)
 
 Setup some crappy password and here you go ! You can know control termux and your phone from your computer !
 Little advice : Create a small bash script to run this easily when needed
