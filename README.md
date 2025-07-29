@@ -1,3 +1,5 @@
+Work in progress, not a lot of tutorial for the moment
+
 # Intro
 Phones are powerful ! 
 Even old ones are often more powerful than rasberry pi or low-end cloud server.
